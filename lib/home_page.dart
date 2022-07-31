@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:treino/adivinhandoletra.dart';
 import 'package:treino/imc_page.dart';
 import 'package:treino/treino_botoes.dart';
 import 'package:treino/treino_temcaracter.dart';
@@ -27,6 +28,17 @@ class HomePage extends StatelessWidget {
                     }));
                   }),
                   child: const Text('Treino de Botões')),
+              const SizedBox(
+                height: 35,
+              ),
+              ElevatedButton(
+                  onPressed: (() {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (BuildContext context) {
+                      return const adivinhandoLetra();
+                    }));
+                  }),
+                  child: const Text('Adivinhando Letra')),
               const SizedBox(
                 height: 35,
               ),
