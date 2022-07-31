@@ -32,8 +32,7 @@ class _ImcPageState extends State<ImcPage> {
             children: [
               TextField(
                 readOnly: true,
-                controller: TextEditingController(
-                    text: MyFunctions.calculoImc(resultImc: resultImc)),
+                controller: TextEditingController(text: ''),
               ),
               const SizedBox(
                 height: 75,
@@ -58,7 +57,14 @@ class _ImcPageState extends State<ImcPage> {
                 height: 35,
               ),
               TextFormField(
-                validator: MyFunctions.valitatorPeso(),
+                validator: (value) {
+                  if (value != null) {
+                    if (value.isEmpty) {
+                      return "Necessário digitar o peso";
+                    }
+                  }
+                  return null;
+                },
                 decoration: const InputDecoration(labelText: 'Peso'),
                 keyboardType: TextInputType.number,
                 controller: pesoController,

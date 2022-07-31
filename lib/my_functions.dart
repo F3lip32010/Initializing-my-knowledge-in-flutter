@@ -5,7 +5,7 @@ class MyFunctions {
 
   MyFunctions(this.resultImc);
 
-  static String calculoImc({required double resultImc}) {
+  String calculoImc({required double resultImc}) {
     if (resultImc < 18.5) {
       return "Você está abaixo do peso";
     } else if (resultImc >= 18.5 && resultImc <= 24.9) {
@@ -19,7 +19,7 @@ class MyFunctions {
     }
   }
 
-  static FormFieldValidator<String> valitatorPeso() {
+  FormFieldValidator<String> valitatorPeso() {
     return (value) {
       if (value != null) {
         if (value.isEmpty) {
@@ -38,8 +38,6 @@ class MyFunctions {
     if (keyGlobal.currentState!.validate()) {
       peso = double.parse(pesoController.text);
       altura = double.parse(alturaController.text);
-       resultImc = peso / (altura * altura);
-      MyFunctions.calculoImc(resultImc: resultImc);
     }
   }
 }
